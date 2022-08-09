@@ -2,7 +2,7 @@ FROM alpine:3.15 as builder
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
     && apk update  \
-    && apk add curl clang bash git grep unzip gzip sudo iputils python3 \
+    && apk add curl clang bash git grep unzip gzip sudo iputils perl python3 \
     && adduser -D xmake \
     && echo "xmake ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/xmake \
     && chmod 0440 /etc/sudoers.d/xmake
